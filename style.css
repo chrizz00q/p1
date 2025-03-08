@@ -1,0 +1,285 @@
+:root {
+    --bg-color: #e0f7fa;
+    --text-color: #333;
+    --primary-color: #00796b;
+    --warning-color: #ffb300;
+    --alert-color: #d32f2f;
+}
+[data-theme='dark'] {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #1de9b6;
+    --warning-color: #ffeb3b;
+    --alert-color: #ff5252;
+}
+
+/* General Body and Text Styling */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap properly */
+    justify-content: center; /* Centers elements when wrapped */
+    align-items: center;
+    gap: 20px; /* Adds spacing between elements */
+}
+  
+/* Left Panel */
+.left-panel {
+    display: flex;
+    flex-direction: column; /* Stack elements properly */
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-left: 0; /* Remove unnecessary left shift */
+}
+
+.measurement {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Container Layout */
+.container-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    float: left;
+    width: 250px;
+    padding: 0px;
+    height: 580px;
+}
+
+.chart-container {
+    padding-top: 100px;
+    width: 950px;
+    height: 510px;
+}
+.ruler {
+    position: relative;
+    width: 40px;
+    height: 580px;
+    background: var(--bg-color);
+    border-right: 2px solid black; /* Changed from white to black for visibility */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.human-container {
+    position: relative;
+    width: 200px;
+    height: 580px;
+    overflow: hidden;
+    background: var(--bg-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.human-figure {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(137, 207, 240, 0.8);
+    transition: height 0.3s ease-in-out;
+    z-index: 1;
+}
+
+/* Input Styling */
+input[type="number"] {
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* LED Styles */
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.led {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: grey;
+    color: white;
+    font-size: 1.5rem;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.led.green { background-color: #4caf50; }
+.led.yellow { background-color: #ffeb3b; }
+.led.red { background-color: #f44336; }
+
+.buzzer-status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Flood Safety Tips & Login Form */
+.tip-section, .login-form {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
+}
+
+[data-theme='dark'] .tip-section,
+[data-theme='dark'] .login-form {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tip-section h3, .login-form h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+.tip-section p {
+    color: black;
+}
+[data-theme='dark'] .tip-section p,
+[data-theme='dark'] .login-form p {
+    color: #e0e0e0;
+}
+
+/* Admin Login */
+.login-input {
+    width: 100%;
+    margin: 10px 2px;
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+.login-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.login-btn:hover {
+    background-color: var(--warning-color);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+}
+.theme-toggle:hover {
+    background-color: var(--warning-color);
+}
+
+/* Popup Alert */
+.alert-popup {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    background-color: rgba(255, 69, 58, 0.9);
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.alert-popup.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    h2 { font-size: 2rem; }
+    .led {
+        width: 100px;
+        height: 100px;
+        font-size: 1rem;
+    }
+    .tip-section h3, .login-form h3 {
+        font-size: 1.5rem;
+    }
+    .login-form input, .login-form button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+    .row {
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center;
+    }
+
+    .left-panel {
+        width: 100%; /* Ensures full width on small screens */
+        margin-left: 0;
+        text-align: center;
+    }
+}
