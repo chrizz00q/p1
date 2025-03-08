@@ -247,3 +247,6 @@ setInterval(() => {
         let fillHeight = (inches / personHeightInches) * figureHeight;
         fill.style.height = `${Math.min(fillHeight, figureHeight)}px`;
     }
+if (window.innerWidth < 1024) {
+  document.querySelector("meta[name=viewport]").setAttribute("content", "width=1024");
+}
