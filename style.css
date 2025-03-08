@@ -257,7 +257,7 @@ input[type="number"] {
 }
 
 /* Mobile Responsive */
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     h2 { font-size: 2rem; }
     .led {
         width: 100px;
