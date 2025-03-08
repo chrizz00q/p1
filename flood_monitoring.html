@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flood Monitoring System</title>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h2>Flood Monitoring System</h2>
+  </header>
+  <main>
+    <!-- Chart Container -->
+<div class="row">
+    <div id="chart-distance" class="chart-container" role="region" aria-labelledby="chart-title">
+      <h3 id="chart-title" hidden>Distance Monitoring Chart</h3>
+    </div>
+    
+    <div class="left-panel">
+        <div class="measurement" id="measurement">Flood Level: 0' 0"</div>
+
+        <div class="container-wrapper">
+            <div class="ruler">
+                <div>5'5"</div>
+                <div>5'</div>
+                <div>4'</div>
+                <div>3'</div>
+                <div>2'</div>
+                <div>1'</div>
+                <div>0'</div>
+            </div>
+            <div class="human-container">
+                <img src="f1a0568b-0c78-4dfb-b516-c743fe83b069.png" alt="Human Figure" class="human-figure">
+                <div class="fill" id="fill"></div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- LED Indicators for Status -->
+        <div class="container">
+            <div id="led-green" class="led" role="status" aria-live="polite">Safe</div>
+            <div id="led-yellow" class="led">Warning</div>
+            <div id="led-red" class="led">Danger</div>
+          </div>
+              <!-- Buzzer Status Display -->
+    <div class="buzzer-status" id="buzzer-status" role="alert">Buzzer Status: Off</div>
+
+    <!-- Flood Safety Tips Section -->
+    <section class="tip-section">
+      <h3>Flood Safety Tips</h3>
+      <p>Stay informed about the weather conditions. Have an emergency kit ready.</p>
+      <p>Know your evacuation routes and have a plan in place.</p>
+    </section>
+
+    <!-- Admin Login Form -->
+    <div class="login-form">
+      <h3>Admin Login</h3>
+      <form action="admin.html" method="get">
+        <div class="form-group">
+          <input type="text" name="username" placeholder="Username" required class="login-input">
+        </div>
+        <div class="form-group">
+          <input type="password" name="password" placeholder="Password" required class="login-input">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="login-btn">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Alert Popup -->
+    <div class="alert-popup" id="alert-popup">Dangerous Flooding Detected!</div>
+
+    <!-- Theme Toggle Button -->
+    <footer>
+      <button class="theme-toggle" id="theme-toggle">Switch to Dark Mode</button>
+    </footer>
+
+    <button onclick="startFireAlarm()">Start Fire Alarm</button>
+    <button onclick="stopFireAlarm()">Stop Fire Alarm</button>  
+    <br>
+    <button onclick="startAwarenessSiren()">Start Siren</button>
+    <button onclick="stopAwarenessSiren()">Stop Siren</button>      
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
